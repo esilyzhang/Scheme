@@ -1,0 +1,8 @@
+(define (f n)
+  (f-iter 2 1 0 3 n))
+(define (f-iter s1 s2 s3 counter n)
+  (cond ((<  n 3) n)
+        ((= counter n) (+ s1 (* 2 s2) (* 3 s3)))
+        (else (f-iter (+ s1 (* 2 s2) (* 3 s3)) s1 s2 (+ counter 1) n))
+        ))
+(f 6)
